@@ -1,0 +1,1700 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Ahmed Nabil - .NET Backend Developer specializing in C#, ASP.NET Core, Web API, Entity Framework Core and SQL Server.">
+
+    <meta name="author" content="Ahmed Nabil">
+
+    <title>Ahmed Nabil | .NET Backend Developer</title>
+
+    <style>
+        /* =========================
+           ROOT VARIABLES
+        ========================= */
+
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+
+            --bg: #ffffff;
+            --bg-secondary: #f8fafc;
+
+            --text: #0f172a;
+            --text-secondary: #64748b;
+
+            --card: #ffffff;
+            --border: #e2e8f0;
+
+            --nav-bg: rgba(255, 255, 255, 0.90);
+
+            --shadow:
+                0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        body.dark {
+            --bg: #020617;
+            --bg-secondary: #0f172a;
+
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+
+            --card: #0f172a;
+            --border: #1e293b;
+
+            --nav-bg: rgba(2, 6, 23, 0.90);
+
+            --shadow:
+                0 10px 30px rgba(0, 0, 0, 0.30);
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+
+            line-height: 1.6;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        .container {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: var(--nav-bg);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        nav {
+            height: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+
+            color: var(--text);
+        }
+
+
+        .logo span {
+            color: var(--primary);
+        }
+
+
+        .nav-right {
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .nav-links {
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: var(--text-secondary);
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           THEME BUTTON
+        ========================= */
+
+        #theme-toggle {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            font-size: 18px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.3s;
+        }
+
+
+        #theme-toggle:hover {
+            color: var(--primary);
+
+            border-color:
+                var(--primary);
+
+            transform:
+                rotate(15deg);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            padding-top: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(37, 99, 235, 0.10),
+                    transparent 30%
+                );
+        }
+
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .hero-small {
+            color: var(--primary);
+
+            font-weight: 700;
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .hero h1 {
+            font-size:
+                clamp(45px, 7vw, 75px);
+
+            line-height: 1.05;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+
+        .hero h2 {
+            font-size:
+                clamp(22px, 4vw, 32px);
+
+            color: var(--text-secondary);
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-description {
+            max-width: 650px;
+
+            color: var(--text-secondary);
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           HERO BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                12px 23px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            border: 2px solid var(--primary);
+
+            transition: 0.3s;
+        }
+
+
+        .btn-primary {
+            background:
+                var(--primary);
+
+            color: white;
+        }
+
+
+        .btn-primary:hover {
+            background:
+                var(--primary-hover);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .btn-outline {
+            color:
+                var(--primary);
+        }
+
+
+        .btn-outline:hover {
+            background:
+                var(--primary);
+
+            color: white;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
+
+        .hero-image {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .profile-wrapper {
+            position: relative;
+
+            width: 330px;
+            height: 330px;
+        }
+
+
+        .profile-wrapper::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -15px;
+
+            border-radius: 50%;
+
+            border:
+                2px solid var(--primary);
+
+            opacity: 0.25;
+
+            animation:
+                pulse 2.5s infinite;
+        }
+
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border:
+                7px solid var(--card);
+
+            box-shadow:
+                0 20px 50px
+                rgba(37, 99, 235, 0.20);
+        }
+
+
+        @keyframes pulse {
+
+            0% {
+                transform: scale(1);
+                opacity: 0.25;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.08;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.25;
+            }
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding:
+                100px 0;
+        }
+
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-title h2 {
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+            color:
+                var(--text-secondary);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background:
+                var(--bg-secondary);
+        }
+
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.1fr 0.9fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .about-text h3 {
+            font-size: 28px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .about-text p {
+            color:
+                var(--text-secondary);
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-info {
+            display: grid;
+
+            gap: 15px;
+        }
+
+
+        .info-card {
+            padding: 20px;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .info-card strong {
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .skill {
+            padding: 22px;
+
+            text-align: center;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .skill:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                var(--primary);
+
+            color:
+                var(--primary);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background:
+                var(--bg-secondary);
+        }
+
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        .project-card {
+            overflow: hidden;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .project-card:hover {
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .project-image {
+            height: 220px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a8a
+                );
+
+            color: white;
+
+            font-size: 32px;
+
+            font-weight: 800;
+        }
+
+
+        .project-content {
+            padding: 25px;
+        }
+
+
+        .project-content h3 {
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .project-content p {
+            color:
+                var(--text-secondary);
+
+            margin-bottom: 18px;
+        }
+
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .tag {
+            padding:
+                5px 10px;
+
+            border-radius: 5px;
+
+            background:
+                rgba(37, 99, 235, 0.10);
+
+            color:
+                var(--primary);
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        .project-link {
+            color:
+                var(--primary);
+
+            font-weight: 700;
+        }
+
+
+        .project-link:hover {
+            text-decoration:
+                underline;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            max-width: 850px;
+
+            margin:
+                auto;
+        }
+
+
+        .timeline-item {
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-left:
+                4px solid var(--primary);
+
+            border-radius:
+                0 10px 10px 0;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+
+        .timeline-item span {
+            color:
+                var(--primary);
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+
+        .timeline-item p {
+            color:
+                var(--text-secondary);
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background:
+                var(--dark);
+        }
+
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+
+        .contact .section-title p {
+            color:
+                #94a3b8;
+        }
+
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .contact-card {
+            padding: 25px;
+
+            text-align: center;
+
+            border:
+                1px solid #334155;
+
+            border-radius: 10px;
+        }
+
+
+        .contact-card h3 {
+            color: white;
+
+            margin-bottom: 8px;
+        }
+
+
+        .contact-card a {
+            color:
+                #93c5fd;
+
+            word-break:
+                break-word;
+        }
+
+
+        .contact-card a:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background:
+                #020617;
+
+            color:
+                #94a3b8;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .buttons {
+                justify-content: center;
+            }
+
+
+            .hero-image {
+                order: -1;
+            }
+
+
+            .profile-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            section {
+                padding:
+                    75px 0;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+
+            .buttons {
+                flex-direction: column;
+            }
+
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="#home" class="logo">
+                Ahmed<span>Nabil</span>
+            </a>
+
+
+            <div class="nav-right">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#experience">
+                            Experience
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <button id="theme-toggle"
+                        aria-label="Toggle dark mode">
+                    🌙
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    Hello, I'm
+                </div>
+
+
+                <h1>
+                    Ahmed
+                    <span>Nabil</span>
+                </h1>
+
+
+                <h2>
+                    .NET Backend Developer
+                </h2>
+
+
+                <p class="hero-description">
+                    I build secure, scalable, and maintainable backend
+                    applications using C#, ASP.NET Core, Web API,
+                    Entity Framework Core, and SQL Server.
+                </p>
+
+
+                <div class="buttons">
+
+                    <a href="#projects"
+                       class="btn btn-primary">
+                        View My Projects
+                    </a>
+
+
+                    <a href="#contact"
+                       class="btn btn-outline">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE IMAGE -->
+
+            <div class="hero-image">
+
+                <div class="profile-wrapper">
+
+                    <img
+                        src="profile.jpg"
+                        alt="Ahmed Nabil"
+                        class="profile-image">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                About Me
+            </h2>
+
+            <p>
+                Backend development focused on real-world applications.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <h3>
+                    Building Reliable Backend Solutions
+                </h3>
+
+
+                <p>
+                    I'm Ahmed Nabil, a Computer Science student and
+                    .NET Backend Developer focused on building clean,
+                    maintainable, and scalable backend applications.
+                </p>
+
+
+                <p>
+                    My development journey started with C++ and
+                    Object-Oriented Programming, then progressed into
+                    C#, ASP.NET Core, Entity Framework Core,
+                    RESTful APIs, and SQL Server.
+                </p>
+
+
+                <p>
+                    I enjoy transforming business requirements into
+                    practical backend solutions with clean architecture,
+                    validation, authentication, and well-designed databases.
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <div class="info-card">
+
+                    <strong>
+                        Specialization
+                    </strong>
+
+                    .NET Backend Development
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <strong>
+                        Education
+                    </strong>
+
+                    Computer Science —
+                    Kafr El-Sheikh University
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <strong>
+                        Primary Technologies
+                    </strong>
+
+                    C# · ASP.NET Core · EF Core · SQL Server
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <strong>
+                        Development Focus
+                    </strong>
+
+                    REST APIs · Clean Architecture · Database Design
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Technical Skills
+            </h2>
+
+            <p>
+                Technologies and tools I work with.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill">C#</div>
+
+            <div class="skill">.NET</div>
+
+            <div class="skill">ASP.NET Core</div>
+
+            <div class="skill">Web API</div>
+
+            <div class="skill">Entity Framework Core</div>
+
+            <div class="skill">SQL Server</div>
+
+            <div class="skill">T-SQL</div>
+
+            <div class="skill">REST APIs</div>
+
+            <div class="skill">JWT Authentication</div>
+
+            <div class="skill">MediatR</div>
+
+            <div class="skill">CQRS</div>
+
+            <div class="skill">FluentValidation</div>
+
+            <div class="skill">Clean Architecture</div>
+
+            <div class="skill">OOP</div>
+
+            <div class="skill">Unit Testing</div>
+
+            <div class="skill">Git & GitHub</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Featured Projects
+            </h2>
+
+            <p>
+                Some of my development work.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- STATIQ -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    StatIQ
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        StatIQ
+                    </h3>
+
+
+                    <p>
+                        A backend-focused application demonstrating
+                        practical API development, data processing,
+                        database integration, and structured backend design.
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            C#
+                        </span>
+
+                        <span class="tag">
+                            ASP.NET Core
+                        </span>
+
+                        <span class="tag">
+                            Web API
+                        </span>
+
+                        <span class="tag">
+                            EF Core
+                        </span>
+
+                        <span class="tag">
+                            SQL Server
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/AhmedNabil-dev"
+                        target="_blank"
+                        rel="noopener"
+                        class="project-link">
+
+                        View on GitHub →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- DVLD -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    DVLD System
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        DVLD Management System
+                    </h3>
+
+
+                    <p>
+                        A desktop management system for managing people,
+                        users, tests, licenses, and driving-related
+                        operations using a structured business and
+                        data-access architecture.
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            C#
+                        </span>
+
+                        <span class="tag">
+                            .NET Framework
+                        </span>
+
+                        <span class="tag">
+                            WinForms
+                        </span>
+
+                        <span class="tag">
+                            SQL Server
+                        </span>
+
+                        <span class="tag">
+                            OOP
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://github.com/AhmedNabil-dev/DLVD_System"
+                        target="_blank"
+                        rel="noopener"
+                        class="project-link">
+
+                        View Project →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Experience & Activities
+            </h2>
+
+            <p>
+                My learning and professional development journey.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    DEPI — Digital Egypt Pioneers Initiative
+                </h3>
+
+                <span>
+                    Technical Training
+                </span>
+
+                <p>
+                    Participating in technical and professional training
+                    focused on software development, databases,
+                    teamwork, communication, and practical projects.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    IEEE Student Activities
+                </h3>
+
+                <span>
+                    Backend Section
+                </span>
+
+                <p>
+                    Active involvement in backend-related technical
+                    activities, teamwork, and student technical events.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    Student Union
+                </h3>
+
+                <span>
+                    Scientific Committee
+                </span>
+
+                <p>
+                    Participated in student activities and contributed
+                    to organizing scientific and technical events.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Let's Work Together
+            </h2>
+
+            <p>
+                Open to backend development opportunities,
+                internships, freelance projects, and collaborations.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Phone
+                </h3>
+
+                <a href="tel:01281427908">
+                    01281427908
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <a
+                    href="https://github.com/AhmedNabil-dev"
+                    target="_blank"
+                    rel="noopener">
+
+                    github.com/AhmedNabil-dev
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <a
+                    href="https://linkedin.com/in/ahmednabil2028"
+                    target="_blank"
+                    rel="noopener">
+
+                    linkedin.com/in/ahmednabil2028
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Ahmed Nabil. All Rights Reserved.
+        </p>
+
+        <p>
+            .NET Backend Developer
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     DARK / LIGHT MODE SCRIPT
+========================= -->
+
+<script>
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
+
+    const body =
+        document.body;
+
+
+    /*
+        Load saved theme
+    */
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+
+    if (savedTheme === "dark") {
+
+        body.classList.add("dark");
+
+        themeToggle.textContent = "☀️";
+
+    }
+
+
+    /*
+        Toggle theme
+    */
+
+    themeToggle.addEventListener(
+        "click",
+        function () {
+
+            body.classList.toggle("dark");
+
+
+            const isDark =
+                body.classList.contains("dark");
+
+
+            if (isDark) {
+
+                themeToggle.textContent = "☀️";
+
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
+
+            } else {
+
+                themeToggle.textContent = "🌙";
+
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
